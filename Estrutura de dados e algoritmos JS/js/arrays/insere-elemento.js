@@ -104,4 +104,70 @@ const myMap = n.map(isEven);
 
 const evenNumbers = n.filter(isEven);
 
-console.log(n.reduce((previous, current) => previous + current));
+n.reduce((previous, current) => previous + current);
+
+for (const num of n) {
+  console.log(num % 2 === 0 ? "even" : "odd");
+}
+
+let iterator = n[Symbol.iterator]();
+for (const num of iterator) {
+  console.log("iterator", num);
+}
+
+/* métodos entries, keys e values de array */
+let aEntries = n.entries(); // obtém um iterator de chave/valor
+console.log(aEntries.next().value); // [0, 1] - posição 0, valor 1
+
+aEntries = n.entries();
+for (const n of aEntries) {
+  console.log(n);
+}
+
+const aKeys = n.keys();
+console.log(aKeys.next());
+
+const aValues = n.values();
+console.log(aValues.next());
+
+// Método from
+let num2 = Array.from(n);
+let evens = Array.from(n, x => x % 2 == 0);
+
+// Método Array.of
+let num3 = Array.of(1); // let num3 = [1];
+let num4 = Array.of(1, 2, 3, 4, 5, 6); // let num4 = [1,2,3,4,5,6];
+
+let numbersCopy = Array.of(...num4); // Array.from(num4);
+
+// Método fill
+num4.fill(0);
+num4.fill(2, 1);
+num4.fill(1, 3, 5);
+
+let ones = Array(6).fill(1);
+
+// Método copyWithin
+let copyArray = [1, 2, 3, 4, 5, 6];
+copyArray.copyWithin(0, 3);
+console.log(copyArray);
+
+copyArray = [1, 2, 3, 4, 5, 6];
+copyArray.copyWithin(1, 3, 5);
+
+n.reverse();
+n.sort((a, b) => a - b);
+/*
+O código acima é o mesmo que:
+
+function compare(a,b) {
+    if(a < b) {
+        return -1;
+    }else if(a > b) {
+        return 1;
+    }
+    return 0;
+}
+n.sort(compare);
+*/
+console.log(n);
