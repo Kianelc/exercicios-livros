@@ -92,4 +92,16 @@ const negativeNumbers = [-3, -2, -1];
 
 let numbers1 = negativeNumbers.concat(zero, positiveNumbers);
 
-console.log(numbers1);
+const isEven = x => x % 2 === 0;
+
+let n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+n.every(isEven); // itera pelos elementos do array até que a função devolva false
+n.some(isEven); // itera pelos elementos do array até que a função devolva true
+// n.forEach(x => console.log(x % 2 === 0));
+
+const myMap = n.map(isEven);
+
+const evenNumbers = n.filter(isEven);
+
+console.log(n.reduce((previous, current) => previous + current));
