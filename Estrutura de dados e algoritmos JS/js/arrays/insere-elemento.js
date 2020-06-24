@@ -81,7 +81,15 @@ for (let i = 0; i < 3; i++) {
 for (let i = 0; i < matrix3x3x3.length; i++) {
   for (let j = 0; j < matrix3x3x3[i].length; j++) {
     for (let z = 0; z < matrix3x3x3[i][j].length; z++) {
-      console.log(matrix3x3x3[i][j][z]);
+      // console.log(matrix3x3x3[i][j][z]);
     }
   }
 }
+
+const zero = 0;
+const positiveNumbers = [1, 2, 3];
+const negativeNumbers = [-3, -2, -1];
+
+let numbers1 = negativeNumbers.concat(zero, positiveNumbers);
+
+console.log(numbers1);
